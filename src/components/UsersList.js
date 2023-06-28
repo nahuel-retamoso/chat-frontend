@@ -13,11 +13,11 @@ const UsersList = ({ myId, connected }) => {
                     if (name) {
                         if (id === myId) {
                             return (
-                                <Text key={index} color='green.800' fontWeight={'bold'}>{name} (You)</Text>
+                                <Text key={index} fontWeight={'bold'}>{name} (You)</Text>
                             )
                         } else {
                             return (
-                                <Text key={index} color='blackAlpha.800' fontWeight={'bold'}>{name}</Text>
+                                <Text key={index} fontWeight={'bold'}>{name}</Text>
                             )
                         }
                     }

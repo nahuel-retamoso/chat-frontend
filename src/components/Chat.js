@@ -39,10 +39,10 @@ const Chat = ({ send, set, message, messagesList }) => {
         )) : null}
         <div ref={messagesEndRef} />
       </Box>
-      <InputGroup boxShadow="0px 8px 32px rgba(31, 38, 135, 0.37)" bg="rgba(255, 255, 255, 0.1)" borderRadius='lg'>
+      <InputGroup boxShadow="0px 8px 32px rgba(31, 38, 135, 0.37)" bg="rgba(255, 255, 255, 0.1)" overflow={'hidden'} borderRadius='lg'>
         <Input value={message} border={'InactiveBorder'} onChange={(event) => set(event.target.value)} onKeyDown={handleKeyPress} />
         <InputRightAddon p='0px' >
-          <Button borderRadius={'none'} onClick={() => send()}>Send</Button>
+          <Button borderRadius={'none'} bg="rgba(255, 255, 255, 0.2)" color='whiteAlpha.900' onClick={() => send()}>Send</Button>
         </InputRightAddon>
       </InputGroup>
     </Flex>
