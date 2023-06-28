@@ -19,13 +19,17 @@ const Chat = ({ send, set, message, messagesList }) => {
   }
 
   return (
-    <Flex bg='green.300' borderRadius='lg' direction='column' p='2%' w='70%'>
-      <Box direction='column' bg='whiteAlpha.900' borderRadius='lg' h='400px' p='2%' justify='end' align='end' mb='2%' overflowY='auto' css={{
+    <Flex  borderRadius='lg' direction='column' p='3%' w='70%'  bg="rgba(0, 0, 0, 0.5)"
+    boxShadow="0px 8px 32px rgba(31, 38, 135, 0.37)"
+    backdropFilter="blur(5px)"
+    webkitBackdropFilter="blur(5px)"
+    border="1px solid rgba(255, 255, 255, 0.1)">
+      <Box direction='column' color='whiteAlpha.900' bg="rgba(255, 255, 255, 0.1)" borderRadius='lg' boxShadow="0px 8px 32px rgba(31, 38, 135, 0.37)"  h='full' p='2%' justify='end' align='end' mb='2%' overflowY='auto' css={{
         '&::-webkit-scrollbar': {
           display: 'none',
         },
-        '-ms-overflow-style': 'none',  /* Internet Explorer 10+ */
-        'scrollbar-width': 'none'  /* Firefox */
+        '-ms-overflow-style': 'none',  
+        'scrollbar-width': 'none'  
       }}>
         {messagesList ? messagesList.map((messages, index) => (
           <Flex w='full' align='center' justify={'end'}>
@@ -35,10 +39,10 @@ const Chat = ({ send, set, message, messagesList }) => {
         )) : null}
         <div ref={messagesEndRef} />
       </Box>
-      <InputGroup bg='whiteAlpha.900' borderRadius='lg'>
-        <Input value={message} onChange={(event) => set(event.target.value)} onKeyDown={handleKeyPress} />
-        <InputRightAddon>
-          <Button onClick={() => send()}>Send</Button>
+      <InputGroup boxShadow="0px 8px 32px rgba(31, 38, 135, 0.37)" bg="rgba(255, 255, 255, 0.1)" borderRadius='lg'>
+        <Input value={message} border={'InactiveBorder'} onChange={(event) => set(event.target.value)} onKeyDown={handleKeyPress} />
+        <InputRightAddon p='0px' >
+          <Button borderRadius={'none'} onClick={() => send()}>Send</Button>
         </InputRightAddon>
       </InputGroup>
     </Flex>

@@ -1,4 +1,4 @@
-import { Button, Flex, Input, Modal, ModalBody, ModalCloseButton, ModalContent, ModalFooter, ModalHeader, ModalOverlay } from '@chakra-ui/react';
+import { AspectRatio, Button, Flex, Image, Input, Modal, ModalBody, ModalCloseButton, ModalContent, ModalFooter, ModalHeader, ModalOverlay } from '@chakra-ui/react';
 import './App.css';
 import Chat from './components/Chat'
 import UsersList from './components/UsersList';
@@ -73,7 +73,7 @@ function App() {
   }
     
   return (
-    <Flex p='10%' bg='yellow.50'>
+    <Flex p='5%' w='full' h='100vh'>
 
       <Chat send={sendMessage} set={setMessage} message={message} messagesList={messages}/>
       <UsersList myId={myId} connected={connectedUsers}/>
@@ -94,7 +94,23 @@ function App() {
           </ModalFooter>
         </ModalContent>
       </Modal>
-
+      <video 
+    autoPlay 
+    loop 
+    muted 
+    style={{
+      position: "absolute",
+      width: "100%",
+      left: "50%",
+      top: "50%",
+      height: "100%",
+      objectFit: "cover",
+      transform: "translate(-50%, -50%)",
+      zIndex: "-1"
+    }}
+  >
+    <source src="/red-background.mp4" type="video/mp4" />
+  </video>
     </Flex>
   );
 }
