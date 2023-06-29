@@ -33,13 +33,13 @@ const Chat = ({ send, set, message, messagesList }) => {
       }}>
         {messagesList ? messagesList.map((messages, index) => (
           <Flex w='full' align='center' justify={'end'}>
-            <Text key={index} bg='blue.100' borderRadius='lg' p='2' m='2'>{messages.message}</Text>
+            <Text key={index} bg="rgba(255, 255, 255, 0.1)" boxShadow="0px 8px 32px rgba(31, 38, 135, 0.37)"borderRadius='lg' p='2' m='2'>{messages.message}</Text>
             <Text fontSize={'sm'} fontWeight={'bold'}>{messages.name}</Text>
           </Flex>
         )) : null}
         <div ref={messagesEndRef} />
       </Box>
-      <InputGroup boxShadow="0px 8px 32px rgba(31, 38, 135, 0.37)" bg="rgba(255, 255, 255, 0.1)" overflow={'hidden'} borderRadius='lg'>
+      <InputGroup color='whiteAlpha.900' boxShadow="0px 8px 32px rgba(31, 38, 135, 0.37)" bg="rgba(255, 255, 255, 0.1)" overflow={'hidden'} borderRadius='lg'>
         <Input value={message} border={'InactiveBorder'} onChange={(event) => set(event.target.value)} onKeyDown={handleKeyPress} />
         <InputRightAddon p='0px' >
           <Button borderRadius={'none'} variant={'ghost'} color='whiteAlpha.900' onClick={() => send()}>Send</Button>
